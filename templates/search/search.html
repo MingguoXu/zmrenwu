@@ -4,15 +4,6 @@
 {% block main %}
     {% if query %}
         {% for result in page.object_list %}
-			# 使用默认值  
-			{% highlight result.summary with query %}  
-
-			# 这里我们为 {{ result.summary }} 里所有的 {{ query }} 指定了一个<div></div>标签，并且将class设置为highlight_me_please，这样就可以自己通过CSS为{{ query }}添加高亮效果了，怎么样，是不是很科学呢  
-			{% highlight result.summary with query html_tag "div" css_class "highlight_me_please" %}  
-
-			# 可以 max_length 限制最终{{ result.summary }} 被高亮处理后的长度
-			{% highlight result.summary with query max_length 40 %}  
-			
             <article class="post post-{{ result.object.pk }}">
                 <header class="entry-header">
                     <h1 class="entry-title">
