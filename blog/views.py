@@ -214,3 +214,14 @@ def search(request):
     post_list = Post.objects.filter(Q(title__icontains=q) | Q(body__icontains=q))
     return render(request, 'blog/index.html', {'error_msg': error_msg,
                                                'post_list': post_list})
+                                               
+    
+class AboutView(ListView):
+    model = Post
+    template_name = 'about/about.html'
+    context_object_name = 'post_list'
+    
+class AboutIndexView(ListView):
+    model = Post
+    template_name = 'about/index.html'
+    context_object_name = 'post_list'

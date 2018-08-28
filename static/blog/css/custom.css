@@ -60,6 +60,7 @@ a:hover, a:focus {
 
 body {
     color: #444;
+	background: #efefef;
     font-family: 'Lato', sans-serif;
 }
 
@@ -214,7 +215,6 @@ img {
 }
 
 .post {
-    background: #fff;
     padding: 30px 30px 0;
 }
 
@@ -336,7 +336,7 @@ img {
  */
 
 .widget {
-    background: #fff;
+    background: #efefef;
     padding: 30px 0 0;
 }
 
