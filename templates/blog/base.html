@@ -3,7 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Black &amp; White</title>
+	<link rel="icon" href="{% static "blog/img/icon.png" %}" type="image/x-icon" />
+    <title>徐明国 &amp; 个人博客</title>
 
     <!-- meta -->
     <meta charset="UTF-8">
@@ -27,6 +28,7 @@
 	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="{% static 'blog/js/pace.min.js' %}"></script>
     <script src="{% static 'blog/js/modernizr.custom.js' %}"></script>
+	<script src="{% static 'blog/js/default.js' %}"></script>
 </head>
 
 <body>
@@ -35,7 +37,7 @@
         <div class="row">
             <div class="col-md-4 col-sm-5 col-xs-8">
                 <div class="logo">
-                    <h1><a href="{% url 'blog:index' %}"><b>学习</b> &amp; 保护</a></h1>
+                    <h1><a href="{% url 'blog:index' %}"><b>学习</b> &amp; 求职</a></h1>
                 </div>
             </div><!-- col-md-4 -->
             <div class="col-md-8 col-sm-7 col-xs-4">
@@ -48,9 +50,9 @@
 
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="cl-effect-11"><a href="{% url 'blog:index' %}" data-hover="首页">首页</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'blog:index' %}" data-hover="博客首页">博客首页</a></li>
                             <li class="cl-effect-11"><a href="{% url 'blog:index' %}" data-hover="关于">关于</a></li>
-                            <li class="cl-effect-11"><a href="{% url 'blog:index' %}" data-hover="联系">联系</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'blog:index' %}" data-hover="求职简历">求职简历</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>
@@ -92,24 +94,9 @@
 						{% endfor %}
 					</ul>
 				</div>
-                
-				<div class="widget widget-archives">
-					<h3 class="widget-title">归档</h3>
-					{% archives as date_list %}
-					<ul>
-						{% for date in date_list %}
-							<li>
-								<a href="{% url 'blog:archives' date.year date.month %}">
-								{{ date.year }} 年 {{ date.month }} 月</a>
-							</li>
-						{% empty %}
-							暂无归档！
-						{% endfor %}
-					</ul>
-				</div>
 
                 <div class="widget widget-category">
-					<h3 class="widget-title">分类</h3>
+					<h3 class="widget-title">文章分类</h3>
 					{% get_categories as category_list %}
 					<ul>
 						{% for category in category_list %}
@@ -129,10 +116,25 @@
 					<ul>
 						{% for tag in tag_list %}
 							<li>
-								<a href="{% url 'blog:tag' tag.pk %}">{{ tag.name }}<span class="post-count">({{ tag.num_posts }})</span></a>
+								<a href="{% url 'blog:tag' tag.pk %}">* {{ tag.name }}<span class="post-count">({{ tag.num_posts }})</span></a>
 							</li>
 						{% empty %}
 							暂无标签！
+						{% endfor %}
+					</ul>
+				</div>
+				
+				<div class="widget widget-archives">
+					<h3 class="widget-title">归档</h3>
+					{% archives as date_list %}
+					<ul>
+						{% for date in date_list %}
+							<li>
+								<a href="{% url 'blog:archives' date.year date.month %}">
+								{{ date.year }} 年 {{ date.month }} 月</a>
+							</li>
+						{% empty %}
+							暂无归档！
 						{% endfor %}
 					</ul>
 				</div>
@@ -140,11 +142,28 @@
                 <div class="rss">
 					<a href="{% url 'rss' %}"><span class="ion-social-rss-outline"></span> RSS 订阅</a>
 				</div>
+				
+				<div class="widget widget_links"><h3>链接</h3>
+					<ul class="xoxo blogroll">
+						<li><a href="https://www.zmrenwu.com" target="_blank">追梦人物的博客</a></li>
+						<li><a href="https://cuiqingcai.com" target="_blank">静觅</a></li>
+						<li><a href="https://www.liuchuo.net" target="_blank">柳婼のblog</a></li>
+						<li><a href="https://www.yezismile.com" target="_blank">叶子个人博客</a></li>
+						<li><a href="http://www.liujiangblog.com" target="_blank">刘江的博客</a></li>
+						<li><a href="https://bh.sb/post/category/main" target="_blank">博海拾贝</a></li>
+						<li><a href="http://www.weixianmanbu.com" target="_blank">危险漫步博客</a></li>
+						<li><a href="http://www.fddcn.cn" target="_blank">奋斗的承诺</a></li>
+						<li><a href="http://ibloger.net" target="_blank">程序喵</a></li>
+						<li><a href="http://www.jikedaohang.com" target="_blank">极客导航</a></li>
+					</ul>
+				</div>
+				
             </aside>
         </div>
     </div>
 </div>
 <footer id="site-footer">
+	<a href="#" class="back-to-top">回到顶端</a>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -162,9 +181,9 @@
     <button type="button" class="overlay-close"><span class="ion-ios-close-empty"></span></button>
     <nav>
         <ul>
-            <li><a href="index.html">首页</a></li>
-            <li><a href="about.html">关于</a></li>
-            <li><a href="contact.html">联系</a></li>
+            <li><a href="{% url 'blog:index' %}">首页</a></li>
+            <li><a href="{% url 'blog:index' %}">关于</a></li>
+            <li><a href="{% url 'blog:index' %}">联系</a></li>
         </ul>
     </nav>
 </div>

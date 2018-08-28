@@ -29,3 +29,24 @@
   padding: 0 8px;
   margin-right: 4px;
 }
+
+/***********************************************************************************************/
+/* back-to-top Button */
+/***********************************************************************************************/
+.back-to-top {
+    position: fixed;
+    bottom: 3em;
+    right: 8em;
+    text-decoration: none;
+    color: #EEEEEE;
+    background-color: #00EE00;
+    font-size: 6px;
+    padding: 1em;
+    display: none;
+    border-radius: 3px;
+    border: 1px solid #CCCCCC;
+}
+
+.back-to-top:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
