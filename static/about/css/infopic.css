@@ -1,6 +1,6 @@
 @charset "gb2312";
 /*图片特效*/
-.picsbox { float: right; width: 100%; overflow: hidden; background: rgba(255,255,255,0.8); padding-bottom: 20px; position: relative; margin-bottom: 20px }
+.picsbox { float: right; width: 100%; overflow: hidden; background: #f9f9f9; padding-bottom: 20px; position: relative; margin-bottom: 20px }
 .newstitles { font-size: 20px; }
 .piccontext { overflow: hidden; padding: 0 20px }
 .piccontext h2 { margin: 20px 0; font-size: 22px; color: #222; }
@@ -25,12 +25,12 @@
 .contextDiv span { position: absolute; top: 50%; margin-top: -10%; width: 46px; height: 80px; }
 #preArrow_A { left: 0px; background: url('../images/left.png') 0px 0px no-repeat; display: none; }
 #nextArrow_A { right: 0px; background: url('../images/right.png') 0px 0px no-repeat; display: none; }
-.picshowtxt { min-height: 40px; _height: 40px; }
+.picshowtxt { min-height: 40px; _height: 40px; text-align: center;}
 .picshowtxt_left { float: left; width: 50px; height: 50px; line-height: 50px; font-family: Georgia, "Times New Roman", Times, serif; }
 .picshowtxt_left span { color: #e55656; font-size: 30px; }
 .picshowtxt_left i { color: #666666; font-size: 20px; }
 .picshowtxt_right { color: #666666; font-size: 14px; padding-top: 14px }
-.picshowlist { width: 100%; padding-bottom: 20px; overflow: hidden; }
+.picshowlist { width: 100%; padding-bottom: 20px;}
 .picshowlist_left { float: left; width: 120px; overflow: hidden; overflow: hidden; }
 .picleftimg { width: 120px; height: 80px; padding-top: 9px; padding-left: 5px; overflow: hidden; }
 .picleftimg img { width: 106px; height: 66px; }
@@ -51,6 +51,8 @@
 /*列表展示*/
 .piclistshow { width: 100%; overflow: hidden; border-top: 1px solid #e4e4e4; margin: 10px 0; display: none; }
 .piclistshow ul li { width: 33%; height: 274px; float: left; border-bottom: 1px solid #e4e4e4; overflow: hidden; border-right: 1px solid #e4e4e4; cursor: pointer; padding-top: 40px; }
+.xz2 ul li { width: 33%; height: 274px; background: #fff; float: left; border-bottom: 1px solid #e4e4e4; overflow: hidden; border-right: 1px solid #e4e4e4; cursor: pointer; padding-top: 40px; }
+.xz2 h2 {background: #fff;}
 .piclistshow ul li:hover { background: #fafafa }
 .piclistshow ul li:nth-child(3n) { border-right: none }
 .piclistshow .picimg { width: 228px; height: 160px; overflow: hidden; display: table-cell; vertical-align: middle; text-align: center; padding: 0px 10px; }
