@@ -49,13 +49,25 @@ a {
     color: #333;
 }
 
+.entry-content a {
+    color: #aa00aa;
+}
+
 a:hover, a:focus {
     text-decoration: none;
     color: #000;
 }
 
+.entry-content a:hover, a:focus {
+    text-decoration: none;
+    color: #00ff00;
+}
+
 ::selection {
     background-color: #eee;
+}
+.entry-content ::selection {
+    background-color: #bbbbbb;
 }
 
 body {

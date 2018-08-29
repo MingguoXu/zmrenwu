@@ -26,6 +26,7 @@
 		</div>
 	</article>
     <section class="comment-area" id="comment-area">
+		<br>
 		<hr>
 		<div class="text-center"><h6>完</h6></div>
 		<hr>
@@ -45,6 +46,7 @@
 				{% endfor %}
 			</ul>
 		</div>
+		<br>
 		<h3>发表评论</h3>
 		<form action="{% url 'comments:post_comment' post.pk %}" method="post" class="comment-form">
 			{% csrf_token %}
